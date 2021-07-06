@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import EvenLayer from './EvenLayer'
 import OddLayer from './OddLayer'
 function Chess() {
+    
     return (
         <Container>
+        
             <EvenLayer/>
             <OddLayer />
             <EvenLayer/>
