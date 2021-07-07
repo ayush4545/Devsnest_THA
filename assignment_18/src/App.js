@@ -35,21 +35,14 @@ function App() {
    ]
   return (
     <div className="app">
-        <h3>High Calorie Food</h3>
+        <h3>Calorie Read Only</h3>
         <Container>
            {list.map(item=>(
-              item.calorie >100 ? <Card title={item.title} calorie={item.calorie}/>:null
+               <Card title={item.title} calorie={item.calorie}/>
            ))}
            
         </Container>
 
-        <h3> Low  Calorie Food</h3>
-        <Container>
-           {list.map(item=>(
-              item.calorie <100 ? <Card title={item.title} calorie={item.calorie}/>:null
-           ))}
-           
-        </Container>
     </div>
   );
 }

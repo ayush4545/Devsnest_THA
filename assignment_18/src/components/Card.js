@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 function Card({title,calorie}) {
+    const bgColor= calorie>100 ? "red":"green"
     return (
-        <Container>
+        <Container style={{backgroundColor:bgColor}}>
               <h4>{title}</h4>
               <p>you have consumed {calorie} cals today</p>
         </Container>
