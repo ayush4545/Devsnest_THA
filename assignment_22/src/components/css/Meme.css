@@ -1,0 +1,41 @@
+.memesDiv{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+.memesDiv img{
+  width:auto;
+  height:300px;
+  object-fit: contain;
+  border: 1px solid black;
+}
+
+.memesDiv input{
+     margin:1rem;
+     padding:0.2rem;
+     border-radius: 0.2rem;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns button{
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(38, 37, 37);
+    color:white;
+    border: none;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.3s linear;
+}
+
+.btns button:hover{
+    transform: scale(0.9);
+    background-color: rgb(77, 76, 76);
+}
