@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding:0;
+box-sizing: border-box;
+}
+
+.home{
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.home h1{
+  margin-bottom: 1rem;
+}
+.home button{
+  margin-top:2rem;
+  padding:0.5rem 1rem;
+  border-radius: 0.5rem;
+  border:1px solid black;
+  cursor: pointer;
+}
+
+.about{
+text-align: center;
+margin-top: 2rem;
+}
+.profile{
+  text-align: center;
+margin-top: 2rem;
+}
+
+.dashboard{
+  text-align: center;
+  margin-top: 2rem;
+}
