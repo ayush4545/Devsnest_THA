@@ -4,24 +4,25 @@ import "./Card.css"
 function Card({id,title,amount,list,setNewList}) {
    
    const [edit,setEdit]=useState(false)
+   const [changeDeleted,setChangeDeleted]=useState(false)
    const [data,setData]=useState({
            text:title,
            amount:amount
        });
-
+ console.log(list)
   const dataChange=(e)=>{
     var name=e.target.name
     var  value=e.target.value
     setData({...data,[name]:value}) 
   }
-   const onDelete=()=>{
-      const newList=list.filter((item,index)=>{
-             if(index!=id){
-                 return item
-             }
-      })
-      setNewList(newList)
-   }
+  
+  const onDelete=(id)=>{
+    setChangeDeleted(true)
+       
+    const newlist=list.filter((item,index)=> index!==id ? item : null)
+    setNewList(newlist)
+    
+ }
 
    const changeEditMode=()=>{
        setEdit(true)
@@ -39,7 +40,7 @@ function Card({id,title,amount,list,setNewList}) {
         </div>    
         :
         <div> 
-        <h3>{data.text}</h3>
+        <h3>{changeDeleted? title : data.text}</h3>
        <p>you have consumed {data.amount} calories</p>
        </div>
         

@@ -13,18 +13,26 @@ function App() {
   const dataChange=(e)=>{
     var name=e.target.name
     var  value=e.target.value
-    setData({...data,[name]:value})
+    if(value!==' '){
+
+      setData({...data,[name]:value})
+    }
      
   }
 
   function onChangeSubmit(){
     setlistEmpty(true)
-    setNewList([...newList,data])
+    console.log(data)
+    if(data.text!=="" && data.amount!==""){
+      setNewList([...newList,data])
+    }
     setData({
       text:'',
       amount:''
     })
   }
+  
+  
   
   return (
     <div className="app">
@@ -34,9 +42,9 @@ function App() {
        </div>
        <button className="btn" onClick={onChangeSubmit}>Add Item</button>
       {
-        listEmpty ?
+        listEmpty && newList.length>0 ?
         newList.map((item,index)=>{
-         return  <Card key={index} id={index} title={item.text} amount={item.amount} list={newList} setNewList={setNewList}/>
+         return  <Card key={index} id={index} title={item.text} amount={item.amount} list={newList} setNewList={setNewList} />
         })
         : <h1 className="warning">Start Adding Items</h1>
       }
