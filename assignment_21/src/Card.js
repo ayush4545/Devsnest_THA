@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import "./Card.css"
 
 function Card({id,title,amount,list,setNewList}) {
@@ -9,6 +9,8 @@ function Card({id,title,amount,list,setNewList}) {
            text:title,
            amount:amount
        });
+
+    
  console.log(list)
   const dataChange=(e)=>{
     var name=e.target.name
@@ -40,7 +42,7 @@ function Card({id,title,amount,list,setNewList}) {
         </div>    
         :
         <div> 
-        <h3>{changeDeleted? title : data.text}</h3>
+        <h3>{changeDeleted ? title : data.text}</h3>
        <p>you have consumed {data.amount} calories</p>
        </div>
         
