@@ -25,7 +25,7 @@ function Carts() {
                  {items.length>0 ? 
                  items.map((item)=>{
 
-                return <Cart image={item.image} title={item.title} price={item.price} id={item.id}/> 
+                return <Cart key={item.id} image={item.image} title={item.title} price={item.price} id={item.id}/> 
                  })
                  
                  : 

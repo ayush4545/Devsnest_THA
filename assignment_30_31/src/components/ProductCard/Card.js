@@ -9,21 +9,21 @@ import {addWishListItem,removeWishItem,toggleHeart} from "../../redux/action/wis
 function Card({id,title,desc,price,img}) {
     // const heartStatus=
     // console.log("heart status-- ",heartStatus)
-    const [active,setActive]=useState(JSON.parse(localStorage.getItem("status")))
+    // const [active,setActive]=useState(JSON.parse(localStorage.getItem("status")))
     const dispatch=useDispatch()
     // const status=useSelector(state=>state.wishListReducer.heartStatus)
-    
+    const active=useSelector(state=>state.wishListReducer.heartStatus)
     const handleSubmit=(e)=>{
         console.log("before-- ",active)
         if(active){
-            setActive(false)
-            localStorage.setItem("status",false)
+            // setActive(false)
+            // localStorage.setItem("status",false)
             // dispatch(toggleHeart())
             dispatch(removeWishItem(id))
         }
         else{
-            setActive(true)
-            localStorage.setItem("status",true)
+            // setActive(true)
+            // localStorage.setItem("status",true)
             // dispatch(toggleHeart())
             dispatch(addWishListItem(id))
         }
@@ -33,8 +33,8 @@ function Card({id,title,desc,price,img}) {
     return (
        
         <div className="card">
-        <div class="stage">
-             <div class={`heart ${active &&'is_active'}`} onClick={handleSubmit}></div>
+        <div className="stage">
+             <div className={`heart ${active &&'is_active'}`} onClick={handleSubmit}></div>
         </div>
            <div className="image">
              <img src={img} alt={title} />

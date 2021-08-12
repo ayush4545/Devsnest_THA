@@ -1,0 +1,32 @@
+@mixin flexTransform {
+    display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.post{
+    margin: 50px 0px;
+
+
+    .card-header{
+     @include flexTransform();
+    }
+
+
+    .card-body{
+        @include flexTransform();
+        padding: 1rem;
+        .left{
+            @include flexTransform();
+            width:18%;
+
+            .liked{
+                color:#ed4956;
+            }
+            
+        }
+        .postIcon{
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+}
